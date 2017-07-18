@@ -1,0 +1,88 @@
+.boat-pic {
+  color: white;
+  text-align: center;
+  height: 50vh;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-trip-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 30px;
+  padding-left: 30px;
+  padding-left: 0;
+}
+
+.header-trip-captain {
+  padding: 20px;
+}
+
+.header-trip h1 {
+    font-size: 25px;
+    margin-top: 0;
+}
+.header-trip p {
+    font-weight: normal;
+    font-size: 14px;
+    color: #777777;
+}
+
+.about-trip h2 {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.trip-description {
+    background: #F5F5F5;
+    padding: 50px 0;
+    padding-bottom: 50px;
+    padding-bottom: 100px;
+    font-size: 14px;
+    color: #555555;
+    display: flex;
+    justify-content: center;
+}
+
+#trip-data {
+    font-weight: normal;
+    font-size: 12px;
+    color: #797373;
+}
+
+#trip-data li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+}
+
+#trip-data i {
+    font-size: 20px;
+    color: #9B9B9B;
+    width: 20px;
+    text-align: center;
+}
+
+#trip-data strong {
+    margin-left: 9px;
+}
+
+#trip-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.form-card {
+  margin: 20px 0;
+  margin-right: 0px;
+  margin-right: 0;
+  background: #F4F4F4;
+  padding: 15px;
+  border-radius: 10px;
+
+}
