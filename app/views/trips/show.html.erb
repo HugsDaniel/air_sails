@@ -23,35 +23,14 @@
         <h4><i class="fa fa-star" style="color: #ffb400"></i> Book from <%=@trip.price%> €</h4>
         <input type="submit" class="btn btn-danger" value="Book this trip" style="width: 100%">
       </form> -->
-      <%= simple_form_for [@trip, @booking] do |f| %>
-      <%=f.hidden_field :user_id, :value => current_user.id %>
-      <%=f.hidden_field :trip_id, :value => @trip.id %>
-      <%=f.hidden_field :price, :value => @trip.price %>
-      <%= f.submit class: "btn btn-primary", style: "width: 100%", value: "Book this trip", data: { confirm: 'Are you sure?' } %>
-      <% end %>
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" style="width: 100%">Book this trip</button>
     </div>
   </div>
 </div>
 </div>
 
-<!-- <div class="trip-description">
-<div class="container text-center">
-<div class="row">
-<div class="col-xs-12 col-sm-6 col-md-3">
-yo
-</div>
-<div class="col-xs-12 col-sm-6 col-md-3">
-yop
-</div>
-<div class="col-xs-12 col-sm-6 col-md-3">
-yop
-</div>
-<div class="col-xs-12 col-sm-6 col-md-3">
-yop
-</div>
-</div>
-</div>
-</div> -->
+<%= render 'shared/modal' %>
+
 <div class="trip-description">
   <div class="container">
     <div class="row">
@@ -68,9 +47,7 @@ yop
               <li>Estimated duration:  <strong><%= @trip.duration %> days</strong></li>
             </ul>
           </div>
-          <!-- </div>
-          <hr>
-          <div class="row" id="trip-data"> -->
+
           <div class="col-xs-12 col-sm-2">
             <h5>About the boat</h5>
           </div>
