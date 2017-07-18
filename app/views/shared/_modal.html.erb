@@ -1,0 +1,51 @@
+<div class="container">
+
+  <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Booking confirmation</h4>
+        </div>
+        <div class="modal-body">
+          <h3> Your informations : </h3>
+          <ul>
+            <li>Name : <%= current_user.first_name %> <%= current_user.last_name %></li>
+            <li>Email : <%= current_user.email %></li>
+            <li>Phone number : <%= current_user.phone_number %></li>
+          </ul>
+          <h4>Would you like to book a trip for yourself ?</h4>
+
+          <%= simple_form_for [@trip, @booking] do |f| %>
+          <%=f.hidden_field :user_id, :value => current_user.id %>
+          <%=f.hidden_field :first_name, :value => current_user.first_name %>
+          <%=f.hidden_field :last_name, :value => current_user.last_name %>
+          <%=f.hidden_field :trip_id, :value => @trip.id %>
+          <%=f.hidden_field :price, :value => @trip.price %>
+          <%= f.submit class: "btn btn-danger", style: "width: 100%", value: "Book for myself" %>
+          <% end %>
+        </div>
+        <div class="modal-body">
+          <h4>Would you like to book a trip for someone else ?</h4>
+          <h5>(You won't have to create an account, just specify the name)</h5>
+          <%= simple_form_for [@trip, @booking] do |f| %>
+          <%=f.hidden_field :user_id, :value => current_user.id %>
+          <%= f.input :first_name %>
+          <%= f.input :last_name %>
+          <%=f.hidden_field :trip_id, :value => @trip.id %>
+          <%=f.hidden_field :price, :value => @trip.price %>
+          <%= f.submit class: "btn btn-danger", style: "width: 100%", value: "Book for this person" %>
+          <% end %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
