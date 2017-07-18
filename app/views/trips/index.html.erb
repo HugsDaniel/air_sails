@@ -1,0 +1,9 @@
+<div class="container">
+<% @trips.each do |trip|%>
+<div class="col-xs-12 col-sm-4">
+      <h2><%= trip.departure_port %></h2>
+      <p><%= trip.description %></p>
+      <%= link_to 'Voir', trip, class: "card-link" %>
+</div>
+<% end %>
+</div>
