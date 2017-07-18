@@ -19,39 +19,38 @@
         </div>
       </div>
       <div class="col-xs-12 col-sm-4 form-card">
-        <form action="#" >
-          <h4><i class="fa fa-star" style="color: #ffb400"></i> Book from <%=@trip.price%> €</h4>
-          <div class="form-group">
-            <select name="" id="guests" class="form-control">
-              <option value="1">1 sailor</option>
-              <option value="2">2 sailors</option>
-              <option value="3">3 sailors</option>
-            </select>
-          </div>
-          <input type="submit" class="btn btn-danger" value="Book this trip" style="width: 100%">
-        </form>
-      </div>
+        <!-- <form action="/trips/<%=@trip.id%>/bookings" method="post" data= { confirm: 'Are you sure?' } >
+        <h4><i class="fa fa-star" style="color: #ffb400"></i> Book from <%=@trip.price%> €</h4>
+        <input type="submit" class="btn btn-danger" value="Book this trip" style="width: 100%">
+      </form> -->
+      <%= simple_form_for [@trip, @booking] do |f| %>
+      <%=f.hidden_field :user_id, :value => current_user.id %>
+      <%=f.hidden_field :trip_id, :value => @trip.id %>
+      <%=f.hidden_field :price, :value => @trip.price %>
+      <%= f.submit class: "btn btn-primary", style: "width: 100%", value: "Book this trip", data: { confirm: 'Are you sure?' } %>
+      <% end %>
     </div>
   </div>
 </div>
+</div>
 
 <!-- <div class="trip-description">
-  <div class="container text-center">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        yo
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        yop
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        yop
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        yop
-      </div>
-    </div>
-  </div>
+<div class="container text-center">
+<div class="row">
+<div class="col-xs-12 col-sm-6 col-md-3">
+yo
+</div>
+<div class="col-xs-12 col-sm-6 col-md-3">
+yop
+</div>
+<div class="col-xs-12 col-sm-6 col-md-3">
+yop
+</div>
+<div class="col-xs-12 col-sm-6 col-md-3">
+yop
+</div>
+</div>
+</div>
 </div> -->
 <div class="trip-description">
   <div class="container">
