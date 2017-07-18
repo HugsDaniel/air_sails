@@ -1,0 +1,90 @@
+<div class="boat-pic" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('http://lorempixel.com/1600/900')"></div>
+<!-- Inject trip data in template -->
+
+
+<div class="header-trip">
+  <div class="container">
+    <div class="row" id="trip-head">
+      <div class="col-xs-12 col-sm-6">
+        <div class="header-trip-details">
+          <div class="header-trip-captain text-center padded">
+            <% image_url = "https://lorempixel.com/100/100" %>
+            <%= image_tag image_url, class: "avatar-mega-large" %>
+            <p><%= @trip.captain.first_name %></p>
+          </div>
+          <div class="header-trip">
+            <h1><%= @trip.departure_port %> <i class="fa fa-arrow-right"></i> <%= @trip.arrival_port %></h1>
+            <p><%= @trip.description %></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 form-card">
+        <form action="#" >
+          <h4><i class="fa fa-star" style="color: #ffb400"></i> Book from <%=@trip.price%> €</h4>
+          <div class="form-group">
+            <select name="" id="guests" class="form-control">
+              <option value="1">1 sailor</option>
+              <option value="2">2 sailors</option>
+              <option value="3">3 sailors</option>
+            </select>
+          </div>
+          <input type="submit" class="btn btn-danger" value="Book this trip" style="width: 100%">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="trip-description">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        yo
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        yop
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        yop
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        yop
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="trip-description">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12">
+        <div class="row" id="trip-data">
+          <div class="col-xs-12 col-sm-2">
+            <h5>About the trip</h5>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <ul class="list-unstyled">
+              <li>Departure port:  <strong><%= @trip.departure_port %></strong></li>
+              <li>Arrival port:  <strong><%= @trip.arrival_port %></strong></li>
+              <li>Distance (in nautical miles):  <strong><%= @trip.distance %> nm</strong></li>
+              <li>Estimated duration:  <strong><%= @trip.duration %> days</strong></li>
+            </ul>
+          </div>
+          <!-- </div>
+          <hr>
+          <div class="row" id="trip-data"> -->
+          <div class="col-xs-12 col-sm-2">
+            <h5>About the boat</h5>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <ul class="list-unstyled">
+              <li><i class="fa fa-cutlery"></i><strong><%=@trip.captain.first_name%> <%=@trip.captain.last_name%></strong></li>
+              <li><i class="fa fa-wifi"></i><strong><%=@trip.boat_name%></strong></li>
+              <li><i class="fa fa-desktop"></i><strong><%=@trip.description%></strong></li>
+              <li><i class="fa fa-glass"></i><strong><%=@trip.capacity%> people</strong></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
