@@ -22,13 +22,17 @@
         <h4><i class="fa fa-star" style="color: #ffb400"></i> Book from <%=@trip.price%> €</h4>
         <input type="submit" class="btn btn-danger" value="Book this trip" style="width: 100%">
       </form> -->
-      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" style="width: 100%">Book this trip</button>
+
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" style="width: 100%">
+        Book this trip
+      </button>
+
+      <%= render 'shared/modal' %>
+
     </div>
   </div>
 </div>
 </div>
-
-<%= render 'shared/modal' %>
 
 <div class="trip-description">
   <div class="container">
