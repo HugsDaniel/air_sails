@@ -3,12 +3,12 @@
     <h1>Bienvenue sur AirSails</h1>
     <p>Un voyage unique en voilier</p>
 
-    <%= simple_form_for(@trip) do |t| %>
-    <%= f.error_notification %>
 
+    <%= simple_form_for(@trips) do |t| %>
+    <%= f.error_notification %>
     <%= f.input :departure %>
     <%= f.input :date %>
-
+    <%= f.input :users %>
     <%= f.button :search %>
   <% end %>
   </div>
