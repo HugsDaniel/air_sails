@@ -1,47 +1,24 @@
+
 <div class="banner" style="background: linear-gradient(-200deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path "background.jpg" %>');">
   <div class="banner-content">
     <h1>Bienvenue sur AirSails</h1>
     <p>Un voyage unique en voilier</p>
+    <%= form_tag trips_path, method: :get do %>
+      <%= text_field_tag 'city_departure',nil,  placeholder: "City departure" %>
+      <%= text_field_tag 'Users', nil, placeholder: 'User(s)' %>
+      <%= text_field_tag 'date_departure', nil, placeholder: "Date", class: "datepicker" %>
+      <%= submit_tag("Search") %>
+    <% end %>
   </div>
 </div>
-    <!-- <form action="#" class="form-inline">
-      <input type="text" class="form-control input-lg" placeholder="Ville de départ">
-      <input type="text" class="form-control input-lg" placeholder="Date de départ">
-
-      <select name="" id="" class="form-control input-lg">
-        <option value="1">
-          1 personne</option>
-        <option value="2">
-          2 personnes</option>
-        <option value="3">
-          3 personnes</option>
-        <option value="4">
-          4 personnes</option>
-        <option value="5">
-          5 personnes</option>
-        <option value="6">
-          6 personnes</option>
-        <option value="7">
-          7 personnes</option>
-        <option value="8">
-          8 personnes</option>
-        <option value="9">
-          9 personnes</option>
-        <option value="10">
-          10 personnes</option>
-      </select>
-      <input type="submit" class="btn btn-primary btn-lg" value="Search">
-    </form> -->
-
-
 
 <div class="container">
+  <p> </p>
+  <p class="text-center"><font size="5"> <Strong>AirSails est une plateforme communautaire payante de location et de réservation de voiliers</font></Strong></p>
+  <p class="text-center"><font size="4">Fondée en 2017 par les génies Hugs, Thom, et VHR.</font></p>
   <div class="padded text-center">
   <%= link_to "Voir tous les voyages", trips_path, class: "btn btn-primary btn-lg btn-block" %>
   </div>
-  <h1 class="text-center">Description</h1>
-  <p class="text-center">Dum ausos effusae hiemabant tunc magnitudine piscatorios prope truncis magnitudine et arborum trucidarunt permeare veloci prope isdem piscatorios prope orto.</p>
-</div>
 </div>
 
 
@@ -101,3 +78,12 @@
   </div>
 </div>
 </div>
+
+
+<%= content_for(:after_js) do %>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.datepicker').datepicker();
+    });
+  </script>
+<% end %>
