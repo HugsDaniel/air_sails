@@ -5,6 +5,7 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :trackable, :validatable, :omniauthable, omniauth_providers: [:facebook]
   has_many  :bookings
   has_many  :trips, foreign_key: 'captain_id'
+  mount_uploader :profile_pic, ProfilePicUploader
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)

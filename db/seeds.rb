@@ -12,21 +12,23 @@ User.destroy_all
 
 jeanmich = User.create!(
 {
-  first_name: 'Jean',
-  last_name: 'Michel',
+  first_name: 'Michel',
+  last_name: 'Desjoyeaux',
   email: 'jean.michel@gmail.com',
   phone_number: '0296789596',
-  password: 'jeanmichel'
+  password: 'jeanmichel',
+  remote_profile_pic_url: 'http://philippe.hillion1.free.fr/Images/voile2/Michel_Desjoyeaux.jpg'
 }
 )
 
 didier = User.create!(
 {
-  first_name: 'Didier',
-  last_name: 'Patoulachi',
+  first_name: 'Roland',
+  last_name: 'Jourdain',
   email: 'didier.patoche@gmail.com',
   phone_number: '0296758452',
-  password: 'didier'
+  password: 'didier',
+  remote_profile_pic_url: 'http://www.cefcm.com/arch/ill/Roland_JOURDAIN.jpg'
 }
 )
 
@@ -36,7 +38,8 @@ thomas = User.create!(
   last_name: 'Perouze',
   email: 'thomas.perouze@gmail.com',
   phone_number: '0679857485',
-  password: 'thomas'
+  password: 'thomas',
+  remote_profile_pic_url: 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAguAAAAJDFmZWJkMzJhLWM3YTgtNGE3Zi05NGY0LTFiZjQ1ZmI4ODA2Zg.jpg'
 }
 )
 
@@ -46,7 +49,8 @@ vincent = User.create!(
   last_name: 'Henry-Roger',
   email: 'vhrvhrvhr@gmail.com',
   phone_number: '0678958596',
-  password: 'vincent'
+  password: 'vincent',
+  remote_profile_pic_url: 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAeeAAAAJDgxNjEwMzFlLTQwNjEtNGI4NC04YjI3LTE2NWI3Njc5OTBjNw.jpg'
 }
 )
 
@@ -56,7 +60,8 @@ hugo = User.create!(
   last_name: 'Daniel',
   email: 'hugsdaniel@gmail.com',
   phone_number: '0678957895',
-  password: 'hugodaniel'
+  password: 'hugodaniel',
+  remote_profile_pic_url: 'http://static.tvtropes.org/pmwiki/pub/images/calvin2_834.jpg'
 }
 )
 
@@ -66,7 +71,8 @@ eric = User.create!(
   last_name: 'Tabarly',
   email: 'eric.tabarly@gmail.com',
   phone_number: '0678958895',
-  password: 'erictabarly'
+  password: 'erictabarly',
+  remote_profile_pic_url: 'https://www.asso-eric-tabarly.org/modules/kameleon/upload/thumb/33690399480_ca1a3df315_o_width500-height.jpg'
 }
 )
 
@@ -82,7 +88,8 @@ trip_hugo_sudaf = Trip.create!(
   boat_name: 'Nomade des Mers',
   description: 'Expédition Low-Tech Lab',
   capacity: 7,
-  price: 0
+  price: 0,
+  remote_photo_url: 'https://www.wedemain.fr/photo/art/grande/8962502-14218333.jpg?v=1455678408'
 }
 )
 
@@ -97,7 +104,8 @@ trip_vincent = Trip.create!(
   boat_name: 'Pen Ker',
   description: 'Cap breton',
   capacity: 5,
-  price: 10
+  price: 10,
+  remote_photo_url: 'http://www.voilesetvoiliers.com/ressources/images/643_944/25f54fb7f58d97d2e8ce39731d8e4f86.jpg'
 }
 )
 
@@ -112,7 +120,8 @@ trip_eric = Trip.create!(
   boat_name: 'Pen Duick',
   description: 'Convoyage vers La Trinité en compagnie d\'Eric Tabarly',
   capacity: 3,
-  price: 50
+  price: 50,
+  remote_photo_url: 'https://www.lamaisondephoto.com/boutique/client/gfx/photos/produit/Penduick_86.jpg'
 }
 )
 
@@ -127,7 +136,8 @@ trip_hugo_bresil = Trip.create!(
   boat_name: 'Nomade des Mers',
   description: 'Low-tech Lab Expédition',
   capacity: 7,
-  price: 0
+  price: 0,
+  remote_photo_url: 'https://www.wedemain.fr/photo/art/grande/8962502-14218333.jpg?v=1455678408'
 }
 )
 
@@ -142,7 +152,8 @@ trip_gob = Trip.create!(
   boat_name: 'Gold of Bengal',
   description: '',
   capacity: 2,
-  price: 0
+  price: 0,
+  remote_photo_url: 'http://driveyouradventure.com/wp-content/uploads/2015/06/1621988_1459730057579271_1208409107_n-e14358493595391.jpg'
 }
 )
 
@@ -157,7 +168,8 @@ trip_didier = Trip.create!(
   boat_name: 'Why',
   description: 'Under The Pole Expedition',
   capacity: 8,
-  price: 3000
+  price: 3000,
+  remote_photo_url: 'https://www.azzaro.com/assets/img/underthepole/bg-good-1.jpg'
 }
 )
 
