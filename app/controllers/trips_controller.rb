@@ -10,9 +10,29 @@ class TripsController < ApplicationController
     @booking = Booking.new
   end
 
+  def new
+    @trip = Trip.new
+  end
+
+  def create
+    @trip = Trip.create(trip_params)
+    @trip.captain = current_user
+
+    if @trip.save
+      redirect_to trip_path(@trip)
+      flash[:notice] = "You've added your trip !"
+    else
+      flash[:alert] = "Trip creation failed"
+    end
+  end
+
   private
 
   def set_trip
     @trip = Trip.find(params[:id])
+  end
+
+  def trip_params
+    params.require(:trip).permit(:departure_port, :arrival_port, :departure_date, :duration, :distance, :boat_name, :description, :capacity, :price, :captain_id, :photo)
   end
 end
