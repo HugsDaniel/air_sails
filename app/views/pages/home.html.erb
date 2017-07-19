@@ -2,9 +2,21 @@
   <div class="banner-content">
     <h1>Bienvenue sur AirSails</h1>
     <p>Un voyage unique en voilier</p>
-    <form action="#" class="form-inline">
+
+    <%= simple_form_for(@trip) do |t| %>
+    <%= f.error_notification %>
+
+    <%= f.input :departure %>
+    <%= f.input :date %>
+
+    <%= f.button :search %>
+  <% end %>
+  </div>
+</div>
+    <!-- <form action="#" class="form-inline">
       <input type="text" class="form-control input-lg" placeholder="Ville de départ">
       <input type="text" class="form-control input-lg" placeholder="Date de départ">
+
       <select name="" id="" class="form-control input-lg">
         <option value="1">
           1 personne</option>
@@ -28,9 +40,8 @@
           10 personnes</option>
       </select>
       <input type="submit" class="btn btn-primary btn-lg" value="Search">
-    </form>
-  </div>
-</div>
+    </form> -->
+
 
 
 <div class="container">
