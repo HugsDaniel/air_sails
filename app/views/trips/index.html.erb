@@ -7,24 +7,11 @@
 </div>
 
 <div class="container">
-  <div class="row">
+  <div class="row padded">
+    <% @trips.each do |trip| %>
     <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "Penduick.jpg" %>');">
-      <!-- <img class="card-img-top" src="assets/images/penduik.jpg" alt="Card image cap"> -->
-        <div class="card-category">Concarneau - Cape Town</div>
-        <div class="card-description">
-          <h2>Nomade des Mers</h2>
-          <p>Expédition Low-Tech Lab</p>
-        </div>
-        <img class="card-user avatar avatar-large" src=<%= image_path "hugs.jpeg" %>>
-        <a class="card-link" href="#" ></a>
-      </div>
-    </div>
-
-   <% @trips.each do |trip| %>
-   <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "Penduick.jpg" %>');">
-      <!-- <img class="card-img-top" src="assets/images/penduik.jpg" alt="Card image cap"> -->
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= trip.photo.url(:standard) %>');">
+        <!-- <img class="card-img-top" src="assets/images/penduik.jpg" alt="Card image cap"> -->
         <div class="card-category"> <%= trip.departure_port %> <%= trip.arrival_port %> </div>
         <div class="card-description">
           <h2><%= trip.boat_name %></h2>
@@ -34,6 +21,6 @@
         <a class="card-link" href="#" ></a>
       </div>
     </div>
-   <% end %>
+    <% end %>
   </div>
 </div>
