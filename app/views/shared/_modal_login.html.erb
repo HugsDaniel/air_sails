@@ -1,0 +1,27 @@
+<div class="container">
+
+  <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+          <h3> You must be logged in to book a trip ! </h3>
+          <br>
+
+            <%= link_to "I already have an account !", new_user_session_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+            <%= link_to "I don't have an account...", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

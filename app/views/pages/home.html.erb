@@ -3,7 +3,6 @@
   <div class="banner-content">
     <h1>Bienvenue sur AirSails</h1>
     <p>Un voyage unique en voilier</p>
-
     <%= form_tag trips_path, method: :get do %>
       <%= text_field_tag 'city_departure',nil,  placeholder: "City departure" %>
       <%= text_field_tag 'Users', nil, placeholder: 'User(s)' %>
@@ -14,9 +13,12 @@
 </div>
 
 <div class="container">
-  <p></p>
+  <p> </p>
   <p class="text-center"><font size="5"> <Strong>AirSails est une plateforme communautaire payante de location et de réservation de voiliers</font></Strong></p>
   <p class="text-center"><font size="4">Fondée en 2017 par les génies Hugs, Thom, et VHR.</font></p>
+  <div class="padded text-center">
+  <%= link_to "Voir tous les voyages", trips_path, class: "btn btn-primary btn-lg btn-block" %>
+  </div>
 </div>
 
 

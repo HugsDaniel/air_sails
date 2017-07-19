@@ -11,7 +11,7 @@
             <%= image_tag @trip.captain.profile_pic, class: "avatar-mega-large" %>
             <p><%= @trip.captain.first_name %></p>
           </div>
-          <div class="header-trip">
+          <div>
             <h1><%= @trip.departure_port %> <i class="fa fa-arrow-right"></i> <%= @trip.arrival_port %></h1>
             <p><%= @trip.description %></p>
           </div>
@@ -23,11 +23,15 @@
         <input type="submit" class="btn btn-danger" value="Book this trip" style="width: 100%">
       </form> -->
 
-      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" style="width: 100%">
+      <button type="button" class="navbar-wagon-item navbar-wagon-button btn" data-toggle="modal" data-target="#myModal" style="width: 100%">
         Book this trip
       </button>
 
-      <%= render 'shared/modal' %>
+      <% if current_user %>
+      <%= render 'shared/modal_booking' %>
+      <% else %>
+      <%= render 'shared/modal_login' %>
+      <% end %>
 
     </div>
   </div>
