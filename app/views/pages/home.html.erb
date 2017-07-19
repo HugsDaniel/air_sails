@@ -2,15 +2,6 @@
   <div class="banner-content">
     <h1>Bienvenue sur AirSails</h1>
     <p>Un voyage unique en voilier</p>
-
-
-    <%= simple_form_for(@trips) do |t| %>
-    <%= f.error_notification %>
-    <%= f.input :departure %>
-    <%= f.input :date %>
-    <%= f.input :users %>
-    <%= f.button :search %>
-  <% end %>
   </div>
 </div>
     <!-- <form action="#" class="form-inline">
@@ -45,6 +36,9 @@
 
 
 <div class="container">
+  <div class="padded text-center">
+  <%= link_to "Voir tous les voyages", trips_path, class: "btn btn-primary btn-lg btn-block" %>
+  </div>
   <h1 class="text-center">Description</h1>
   <p class="text-center">Dum ausos effusae hiemabant tunc magnitudine piscatorios prope truncis magnitudine et arborum trucidarunt permeare veloci prope isdem piscatorios prope orto.</p>
 </div>
