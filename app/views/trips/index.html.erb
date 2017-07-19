@@ -31,7 +31,7 @@
           <p><%= trip.description %></p>
         </div>
         <img class="card-user avatar avatar-large" src=<%= image_path "hugs.jpeg" %>>
-        <a class="card-link" href="#" ></a>
+        <%= link_to 'voir', trip_path(trip), class: 'card-link' %>
       </div>
     </div>
    <% end %>
