@@ -1,4 +1,4 @@
-<div class="boat-pic" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('http://lorempixel.com/1600/900')"></div>
+<div class="boat-pic" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url(<%= @trip.photo.url(:standard) %>)"></div>
 <!-- Inject trip data in template -->
 
 
@@ -8,8 +8,7 @@
       <div class="col-xs-12 col-sm-6">
         <div class="header-trip-details">
           <div class="header-trip-captain text-center padded">
-            <% image_url = "https://lorempixel.com/100/100" %>
-            <%= image_tag image_url, class: "avatar-mega-large" %>
+            <%= image_tag @trip.captain.profile_pic, class: "avatar-mega-large" %>
             <p><%= @trip.captain.first_name %></p>
           </div>
           <div class="header-trip">
