@@ -4,9 +4,9 @@
     <h1>Bienvenue sur AirSails</h1>
     <p>Un voyage unique en voilier</p>
     <%= form_tag trips_path, method: :get do %>
-      <%= text_field_tag 'city_departure',nil,  placeholder: "City departure" %>
+      <%= text_field_tag 'departure_port',nil,  placeholder: "City departure" %>
       <%= text_field_tag 'Users', nil, placeholder: 'User(s)' %>
-      <%= text_field_tag 'date_departure', nil, placeholder: "Date", class: "datepicker" %>
+      <%= text_field_tag 'departure_date', nil, placeholder: "Date", class: "datepicker" %>
       <%= submit_tag("Search") %>
     <% end %>
   </div>
