@@ -1,5 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_trip, only: [:create]
+  before_action :authenticate_user!, only: [:create]
+
 
   def create
     @booking = Booking.new(booking_params)
