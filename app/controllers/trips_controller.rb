@@ -14,6 +14,8 @@ class TripsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @bookings = @trip.bookings.count
+    @remaining_places = @trip.capacity - @bookings
   end
 
   def new
