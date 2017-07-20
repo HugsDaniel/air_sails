@@ -48,7 +48,12 @@
                 <li>Departure date:  <strong><%= @trip.departure_date %></strong></li>
                 <li>Distance (in nautical miles):  <strong><%= @trip.distance %> nm</strong></li>
                 <li>Estimated duration:  <strong><%= @trip.duration %> days</strong></li>
-                <li>Contact:  <strong><%= @trip.captain.email %> </strong></li>
+                <% if @user_booking == nil %>
+                <% else %>
+                  <% if @user_booking.status == "Accepted" %>
+                    <li>Contact:  <strong><%= @trip.captain.email %> </strong></li>
+                  <% end %>
+                <% end %>
               </ul>
             </div>
 

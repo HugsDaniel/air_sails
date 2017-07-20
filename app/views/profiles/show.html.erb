@@ -9,10 +9,8 @@
     </div>
     <div class="col-md-4">
       <h3 class="text-center">Info</h3>
-      <% @trips.each do |trip| %>
       <p class="text-center">Last Name : <%= current_user.last_name %></p>
       <p class="text-center">First Name : <%= current_user.first_name %></p>
-      <% end %>
     </div>
     <div class="col-md-4">
       <h3 class="text-center">Trips</h3>
@@ -24,9 +22,9 @@
     </div>
 <div class="col-md-4">
       <h3 class="text-center">Réservation</h3>
-      <% @bookings.each do |booking| %>
-      <p class="text-center">Departure port : <%= booking.trip.departure_port %></p>
-      <p class="text-center">Arrival port : <%= booking.trip.arrival_port %></p>
+      <% @captain_bookings.each do |booking| %>
+      <p class="text-center"><%= booking.first_name %> <%= booking.last_name %> booked a place on your trip !</p>
+      <p class="text-center">Motivation : <%= booking.motivation %> </p>
       <p class="text-center">Status : <%= booking.status %></p>
       <%= link_to "Accept", accept_reservation_path(booking), method: :patch, data: {confirm: "Are you sure?"}, class: "text-center btn btn-success"  %>
       <%= link_to "Deny", deny_reservation_path(booking), method: :patch, data: {confirm: "Are you sure?"}, class: "text-center btn btn-danger"  %>

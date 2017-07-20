@@ -18,6 +18,7 @@
           <%=f.hidden_field :last_name, :value => current_user.last_name %>
           <%=f.hidden_field :trip_id, :value => @trip.id %>
           <%=f.hidden_field :price, :value => @trip.price %>
+          <%= f.input :motivation, placeholder: "Your motivation in a few words" %>
           <%= f.submit class: "navbar-wagon-item navbar-wagon-button btn", style: "width: 100%", value: "Book for myself" %>
           <% end %>
         </div>
@@ -28,6 +29,7 @@
           <%=f.hidden_field :user_id, :value => current_user.id %>
           <%= f.input :first_name %>
           <%= f.input :last_name %>
+          <%= f.input :motivation, placeholder: "Your motivation in a few words" %>
           <%=f.hidden_field :trip_id, :value => @trip.id %>
           <%=f.hidden_field :price, :value => @trip.price %>
           <%= f.submit class: "navbar-wagon-item navbar-wagon-button btn", style: "width: 100%", value: "Book for this person" %>
