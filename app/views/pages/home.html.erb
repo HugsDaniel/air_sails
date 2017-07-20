@@ -4,6 +4,7 @@
     <h1>Welcome to AirSails</h1>
     <p>Unique sailing trip</p>
     <%= form_tag trips_path, method: :get do %>
+
     <%= text_field_tag :departure_port, nil, placeholder: "Choose a port", class: "btn-lg" %>
     <%= text_field_tag :departure_date, nil, placeholder: "Date", class: "datepicker btn-lg" %>
     <%= submit_tag "Search", class:"btn btn-primary btn-lg" %>
@@ -42,7 +43,7 @@
     <% @cards.each do |trip| %>
     <div class="col-xs-12 col-sm-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0, 0.2)), url('<%= trip.photo.url(:standard) %>');">
-        <div class="card-category"> <%= trip.departure_port %> <%= trip.arrival_port %> </div>
+        <div class="card-category"> <%= trip.departure_port %> <i class="fa fa-arrows-h" aria-hidden="true"></i> <%= trip.arrival_port %> </div>
         <div class="card-description">
           <h2><%= trip.boat_name %></h2>
           <p><%= trip.description %></p>
