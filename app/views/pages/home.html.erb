@@ -4,9 +4,8 @@
     <h1>Welcome to AirSails</h1>
     <p>Unique sailing trip</p>
     <%= form_tag trips_path, method: :get do %>
-    <%= text_field_tag 'city_departure',nil,  placeholder: "City departure", class: "btn-lg" %>
-    <%= text_field_tag 'Users', nil, placeholder: 'User(s)', class: "btn-lg" %>
-    <%= text_field_tag 'date_departure', nil, placeholder: "Date", class: "datepicker btn-lg" %>
+    <%= text_field_tag :departure_port, nil, placeholder: "City departure", class: "btn-lg" %>
+    <%= text_field_tag :departure_date, nil, placeholder: "Date", class: "datepicker btn-lg" %>
     <%= submit_tag "Search", class:"btn btn-primary btn-lg" %>
     <% end %>
     <div class="container">
@@ -54,7 +53,7 @@
     </div>
     <% end %>
   </div>
-</div
+</div>
 </div>
 
 

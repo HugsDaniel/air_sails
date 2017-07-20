@@ -3,7 +3,11 @@ class TripsController < ApplicationController
   before_action :set_trip, only: [:show]
 
   def index
-    @trips = Trip.all
+    @trips = if params[:departure_port] || params[:departure_date]
+      Trip.where('departure_port LIKE ?', "%#{params[:departure_port]}%")
+    else
+      Trip.all
+    end
   end
 
   def show
