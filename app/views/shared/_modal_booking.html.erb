@@ -1,5 +1,4 @@
 <div class="container">
-
   <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -11,12 +10,6 @@
           <h4 class="modal-title">Booking confirmation</h4>
         </div>
         <div class="modal-body">
-          <h3> Your informations : </h3>
-          <ul>
-            <li>Name : <%= current_user.first_name %> <%= current_user.last_name %></li>
-            <li>Email : <%= current_user.email %></li>
-            <li>Phone number : <%= current_user.phone_number %></li>
-          </ul>
           <h4>Would you like to book a trip for yourself ?</h4>
 
           <%= simple_form_for [@trip, @booking] do |f| %>
