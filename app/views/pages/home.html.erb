@@ -39,40 +39,24 @@
 <div class="wrapper">
   <div class="container">
     <h1 class="text-center">Travel offers</h1>
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "card-voilier-romain.jpg" %>');">
-          <div class="card-category">Paris</div>
-          <div class="card-description">
-            <h2>Bateau de Romain</h2>
-            <p>Super bateau</p>
-          </div>
-          <a class="card-link" href="#"></a>
+  <div class="row">
+    <% @cards.each do |trip| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0, 0.2)), url('<%= trip.photo.url(:standard) %>');">
+        <div class="card-category"> <%= trip.departure_port %> <%= trip.arrival_port %> </div>
+        <div class="card-description">
+          <h2><%= trip.boat_name %></h2>
+          <p><%= trip.description %></p>
         </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "card-voilier-anne.jpg" %>');">
-          <div class="card-category">Brussels</div>
-          <div class="card-description">
-            <h2>Bateau Anne</h2>
-            <p>Super bateau</p>
-          </div>
-          <a class="card-link" href="#"></a>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path "card-voilier-seb.jpg" %>');">
-          <div class="card-category">London</div>
-          <div class="card-description">
-            <h2>Bateau Seb</h2>
-            <p>Super bateau</p>
-          </div>
-          <a class="card-link" href="#"></a>
-        </div>
+        <img class="card-user avatar avatar-large" src="<%= image_path trip.captain.profile_pic  %>">
+        <%= link_to 'voir', trip_path(trip), class: 'card-link' %>
       </div>
     </div>
+    <% end %>
   </div>
+</div
 </div>
+
 
 <%= content_for(:after_js) do %>
   <script type="text/javascript">

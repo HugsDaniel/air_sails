@@ -28,7 +28,7 @@ didier = User.create!(
   email: 'didier.patoche@gmail.com',
   phone_number: '0296758452',
   password: 'didier',
-  remote_profile_pic_url: 'http://www.cefcm.com/arch/ill/Roland_JOURDAIN.jpg'
+  remote_profile_pic_url: 'https://www.mymajorcompany.com/mmcMediaPlugin/media/image/3c/3c286dff32215.jpg'
 }
 )
 

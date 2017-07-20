@@ -1,0 +1,29 @@
+<h1 class="text-center">Sign up</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+      <%= simple_form_for(@trip) do |f| %>
+      <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :departure_port, required: true, autofocus: true %>
+    <%= f.input :arrival_port, required: true, autofocus: true %>
+    <%= f.input :departure_date, required: true %>
+    <%= f.input :duration, required: true, autofocus: true %>
+    <%= f.input :distance, required: true, autofocus: true %>
+    <%= f.input :boat_name, required: true, autofocus: true %>
+    <%= f.input :capacity, required: true, autofocus: true %>
+    <%= f.input :price, required: true, autofocus: true %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+  </div>
+
+
+      <div class="form-actions">
+        <%= f.button :submit, "Create your trip", class: "btn btn-primary btn-lg" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
