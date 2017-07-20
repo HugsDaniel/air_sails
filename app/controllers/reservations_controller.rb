@@ -1,7 +1,8 @@
 class ReservationsController < ApplicationController
-
+  before_action :set_booking
+  before_action :authenticate_user!
+  
   def accept
-    @booking = Booking.find(params[:id])
     @booking.update(:status => "Accepted")
     if @booking.save
       redirect_to profile_path(current_user)
@@ -12,7 +13,6 @@ class ReservationsController < ApplicationController
   end
 
   def deny
-    @booking = Booking.find(params[:id])
     @booking.update(:status => "Deny")
     if @booking.save
       redirect_to profile_path(current_user)
@@ -20,5 +20,11 @@ class ReservationsController < ApplicationController
     else
       flash[:alert] = "Booking confirmation failed"
     end
+  end
+
+  private
+
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 end
