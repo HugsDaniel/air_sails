@@ -12,10 +12,12 @@
 .header-trip {
   padding: 15px;
   background-color: white;
-  width: 90%;
+  width: 95%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 .book-trip {
   background-color: grey;
@@ -48,7 +50,7 @@
 }
 
 .trip-description {
-    background: #F5F5F5;
+    background: $gray;
     padding: 50px 0;
     padding-bottom: 50px;
     padding-bottom: 100px;
@@ -57,6 +59,8 @@
     display: flex;
     justify-content: center;
 }
+
+// #F5F5F5
 
 #trip-data {
     font-weight: normal;
