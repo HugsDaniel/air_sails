@@ -2,33 +2,33 @@
   <div class="row">
     <div class="col-md-12">
       <h1 class="text-center">Welcome</h1>
-      <h3 class="text-center">Your Profile</h3>
+      <h3 class="text-center"><%= current_user.first_name %></h3>
     </div>
-    <div class="col-md-6">
-      <img src="<%= image_path "Eric.jpg" %>" alt="user" class="avatar-profil">
+    <div class="avatar-profile">
+    <img src="<%= current_user.profile_pic %>" alt="user" class="avatar-profile-large">
+    </div>
+    <div class="col-md-4">
       <h3 class="text-center">Info</h3>
+      <% @trips.each do |trip| %>
+      <p class="text-center">Last Name : <%= current_user.last_name %></p>
+      <p class="text-center">First Name : <%= current_user.first_name %></p>
+      <% end %>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <h3 class="text-center">Trips</h3>
+      <% @bookings.each do |booking| %>
+      <p class="text-center">Departure date : <strong><%= booking.trip.departure_date %></strong></p>
+      <p class="text-center">Departure port : <%= booking.trip.departure_port %></p>
+      <p class="text-center">Arrival port : <%= booking.trip.arrival_port %></p>
+      <% end %>
+    </div>
+<div class="col-md-4">
       <h3 class="text-center">Réservation</h3>
+      <% @bookings.each do |booking| %>
+      <p class="text-center">Departure port : <%= booking.trip.departure_port %></p>
+      <p class="text-center">Arrival port : <%= booking.trip.arrival_port %></p>
+      <p class="text-center">Status : <%= booking.status %></p>
+      <% end %>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-<!--
-<div class="col-xs-offset-1 col-sm-offset-2">
-<img src="<%= image_path "Eric.jpg" %>" alt="user" class="avatar-profil">
-</div>
-
-<div class="wrapper">
-  <div class="col-xs-offset-1 col-sm-offset-2">
-    <h3>Info</h3>
-  </div>
-</div> -->
