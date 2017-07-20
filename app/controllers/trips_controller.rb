@@ -4,7 +4,7 @@ class TripsController < ApplicationController
 
   def index
     @trips = if params[:departure_port] || params[:departure_date]
-      Trip.where('departure_port LIKE ?', "%#{params[:departure_port]}%")
+      Trip.where('departure_port LIKE ? AND departure_date = ?', "%#{params[:departure_port]}%", "%#{params[:departure_date]}%")
     else
       Trip.all
     end
