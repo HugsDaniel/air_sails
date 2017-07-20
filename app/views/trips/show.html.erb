@@ -1,41 +1,31 @@
-<div class="boat-pic" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url(<%= @trip.photo.url(:standard) %>)"></div>
-<!-- Inject trip data in template -->
+<% if current_user %>
+  <%= render 'shared/modal_booking' %>
+<% else %>
+  <%= render 'shared/modal_login' %>
+<% end %>
 
 
-<div class="header-trip">
-  <div class="container">
-    <div class="row" id="trip-head">
-      <div class="col-xs-12 col-sm-6">
-        <div class="header-trip-details">
-          <div class="header-trip-captain text-center padded">
-            <%= image_tag @trip.captain.profile_pic, class: "avatar-mega-large" %>
-            <p><%= @trip.captain.first_name %></p>
-          </div>
-          <div>
-            <h1><%= @trip.departure_port %> <i class="fa fa-arrow-right"></i> <%= @trip.arrival_port %></h1>
-            <p><%= @trip.description %></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 form-card">
-        <!-- <form action="/trips/<%=@trip.id%>/bookings" method="post" data= { confirm: 'Are you sure?' } >
-        <h4><i class="fa fa-star" style="color: #ffb400"></i> Book from <%=@trip.price%> €</h4>
-        <input type="submit" class="btn btn-danger" value="Book this trip" style="width: 100%">
-      </form> -->
-
-      <button type="button" class="navbar-wagon-item navbar-wagon-button btn" data-toggle="modal" data-target="#myModal" style="width: 100%">
-        Book this trip
-      </button>
-
-      <% if current_user %>
-      <%= render 'shared/modal_booking' %>
-      <% else %>
-      <%= render 'shared/modal_login' %>
-      <% end %>
-
+<div class="boat-pic" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url(<%= @trip.photo.url(:standard) %>)">
+  <div class="header-trip">
+    <div class="header-trip-captain text-center padded">
+        <%= image_tag @trip.captain.profile_pic, class: "avatar-mega-large avatar-circle" %>
+        <p><%= @trip.captain.first_name %></p>
     </div>
+    <div>
+      <h1>
+        <%= @trip.departure_port %><i class="fa fa-arrow-right"></i><%= @trip.arrival_port %>
+      </h1>
+       <p><%= @trip.description %></p>
+       <p>Price: <strong><%=@trip.price%> <i class="fa fa-eur"></i></strong></p>
+    </div>
+    <button type="button" class="navbar-wagon-item navbar-wagon-button btn book-trip" data-toggle="modal" data-target="#myModal">
+      Book this trip
+    </button>
+    <!-- <form action="/trips/<%=@trip.id%>/bookings" method="post" data= { confirm: 'Are you sure?' } >
+    <h4><i class="fa fa-star" style="color: #ffb400"></i> Book from <%=@trip.price%> €</h4>
+    <input type="submit" class="btn btn-danger" value="Book this trip" style="width: 100%">
+    </form> -->
   </div>
-</div>
 </div>
 
 <div class="trip-description">
@@ -44,7 +34,7 @@
       <div class="col-xs-12 col-sm-12">
         <div class="row" id="trip-data">
           <div class="col-xs-12 col-sm-2">
-            <strong><h5>About the trip:</h5></strong>
+            <strong><h5><u><FONT size="3pt">About the trip:</font></h5></u></strong>
           </div>
           <div class="col-xs-12 col-sm-4">
             <ul class="list-unstyled">
@@ -58,15 +48,14 @@
           </div>
 
           <div class="col-xs-12 col-sm-2">
-            <strong><h5>About the boat:</h5></strong>
+            <strong><u><h5><FONT size="3pt">About the boat:</font></h5></strong></u>
           </div>
           <div class="col-xs-12 col-sm-4">
             <ul class="list-unstyled">
               <li><i class="fa fa-user-circle-o"></i><strong><%=@trip.captain.first_name%> <%=@trip.captain.last_name%></strong></li>
               <li><i class="fa fa-ship"></i><strong><%=@trip.boat_name%></strong></li>
-              <li><i class="fa fa-arrow-right"></i><strong><%=@trip.description%></strong></li>
+              <li><i class="fa fa-info-circle"></i><strong><%=@trip.description%></strong></li>
               <li><i class="fa fa-users"></i><strong><%=@trip.capacity%> peoples</strong></li>
-              <li><i class="fa fa-eur"></i><strong><%=@trip.price%> euro</strong></li>
             </ul>
           </div>
         </div>
