@@ -1,0 +1,20 @@
+.product {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+  text-align: center;
+}
+
+.product-controls {
+  padding: 0 20px;
+  font-size: 17px;
+  color: #597379;
+}
+
+/* Hover effects */
+.product:hover {
+  background: $gray;
+  cursor: pointer;
+}

@@ -8,44 +8,69 @@
 </div>
 <div class="col-lg-12">
   <div class="info">
-    <<h3 class="text-center">Info</h3>
+    <h3 class="text-center">Info</h3>
       <p class="text-center">Last Name : <%= current_user.last_name %></p>
       <p class="text-center">First Name : <%= current_user.first_name %></p>
       <p class="text-center">E-mail : <%= current_user.email %></p>
   </div>
 </div>
 
-
-<div class="container">
-  <h3 class="text-center">Reservation for my trips</h3>
-  <div class="row">
-    <% @captain_bookings.each do |booking| %>
-    <div class="col-xs-12 col-sm-4">
-      <div class="card-profile">
-        <div class="text-center"><%= image_tag "holidays.png" %></div>
-        <div class="text-center"><%= booking.first_name %> <%= booking.last_name %> booked a place on my trip !</div>
-        <div class="text-center">Motivation : <%= booking.motivation %></div>
-        <div class="text-center">Status : <%= booking.status %></div>
-        <div class="text-center"><%= link_to "Accept", accept_reservation_path(booking), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn btn-success"  %></div>
-        <div class="text-center"><%= link_to "Deny", deny_reservation_path(booking), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn btn-danger"  %></div>
-      </div>
-    </div>
-    <% end %>
+  <div class="container">
+    <h3 class="text-center">Reservation for my trips</h3>
+        <% @captain_bookings.each do |booking| %>
+        <div class="product">
+        <ul class="list-inline product-controls col-lg-offset-2">
+        <li><%= image_tag "holidays.png" %></li>
+        <li><%= booking.first_name %><%= booking.last_name %>booked a place on my trip !</li>
+        <li>Motivation : <%= booking.motivation %></li>
+        <li>Status : <%= booking.status %></li>
+        <li><%= link_to "Accept", accept_reservation_path(booking), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn btn-success"  %></li>
+        <li><%= link_to "Deny", deny_reservation_path(booking), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn btn-danger"  %></li>
+        </ul>
+        </div>
+        <% end %>
   </div>
-</div>
+
+
+
 
 <div class="container">
   <h3 class="text-center">My trips reserved</h3>
-  <div class="row">
-    <% @bookings.each do |booking| %>
-    <div class="col-xs-12 col-sm-4">
-      <div class="card-profile">
-        <div class="text-center"><%= image_tag "transport.png" %></div>
-        <div class="text-center"><%= booking.trip.departure_port %></strong> <i class="fa fa-arrows-h" aria-hidden="true"></i> <strong><%= booking.trip.arrival_port %></strong></div>
-        <div class="text-center"><%= link_to "View trip details !", trip_path(booking.trip), class: "text-center btn btn-success", target: "_blank" %></div>
-        <div class="text-center">Status : <%= booking.status %></div>
+      <% @bookings.each do |booking| %>
+      <div class="product">
+      <ul class="list-inline product-controls col-lg-offset-2">
+      <li><%= image_tag "transport.png" %></li>
+      <li><%= booking.trip.departure_port %></strong></li>
+      <li class="fa fa-arrows-h" aria-hidden="true"></i><strong> <%= booking.trip.arrival_port %></strong></li>
+      <li><%= link_to "View trip details !", trip_path(booking.trip), class: "text-center btn btn-success", target: "_blank" %></li>
+      <li>Status : <%= booking.status %></li>
+      </ul>
       </div>
-    </div>
-    <% end %>
-  </div>
+  <% end %>
 </div>
+
+
+
+
+
+<!-- <div class="container">
+  <div class="product">
+    <div class='product-upvote'>
+      <div class="product-arrow"></div>
+    </div>
+    <div class='product-body'>
+      <h3 class="text-center">Reservation for my trips</h3>
+    </div>
+    <div class="row">
+      <% @captain_bookings.each do |booking| %>
+        <div class="card-profile">
+          <div class="text-center"><%= image_tag "holidays.png" %></div>
+          <div class="text-center"><%= booking.first_name %><%= booking.last_name %>booked a place on my trip !</div>
+          <div class="text-center">Motivation : <%= booking.motivation %></div>
+          <div class="text-center">Status : <%= booking.status %></div>
+          <div class="text-center"><%= link_to "Accept", accept_reservation_path(booking), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn btn-success"  %></div>
+          <div class="text-center"><%= link_to "Deny", deny_reservation_path(booking), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn btn-danger"  %></div>
+        </div>
+      <% end %>
+    </div>
+  </div> -->
