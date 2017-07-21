@@ -23,11 +23,11 @@
     <div class="col-xs-12 col-sm-4">
       <div class="card-profile">
         <div class="text-center"><%= image_tag "holidays.png" %></div>
-        <div class="text-center"><%= booking.first_name %> <%= booking.last_name %> booked a place on my trip !</div>
+        <div class="text-center"><%= booking.first_name %> <%= booking.last_name %></div>
         <div class="text-center">Motivation : <%= booking.motivation %></div>
         <div class="text-center">Status : <%= booking.status %></div>
-        <div class="text-center"><%= link_to "Accept", accept_reservation_path(booking), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn btn-success"  %></div>
-        <div class="text-center"><%= link_to "Deny", deny_reservation_path(booking), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn btn-danger"  %></div>
+        <div class="text-center"><%= link_to "Accept", accept_reservation_path(booking), method: :patch, data: {confirm: "Confirm this booking ?"}, class: "btn btn btn-success" %></div>
+        <div class="text-center"><%= link_to "Deny", deny_reservation_path(booking), method: :patch, data: {confirm: "Deny this booking ?"}, class: "btn btn btn-danger" %></div>
       </div>
     </div>
     <% end %>
@@ -38,7 +38,7 @@
   <h3 class="text-center">My trips reserved</h3>
   <div class="row">
     <% @bookings.each do |booking| %>
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-12 col-sm-6">
       <div class="card-profile">
         <div class="text-center"><%= image_tag "transport.png" %></div>
         <div class="text-center"><%= booking.trip.departure_port %></strong> <i class="fa fa-arrows-h" aria-hidden="true"></i> <strong><%= booking.trip.arrival_port %></strong></div>
