@@ -3,8 +3,10 @@ class TripsController < ApplicationController
   before_action :set_trip, only: [:show]
 
   def index
-    @trips = if params[:departure_port] || params[:departure_date]
+    @trips = if params[:departure_date] == ""
       Trip.where('departure_port LIKE ?', "%#{params[:departure_port]}%")
+    elsif params[:departure_port] && params[:departure_date]
+      Trip.where('departure_port LIKE ? AND departure_date = ?', "%#{params[:departure_port]}%", params[:departure_date])
     else
       Trip.all
     end
@@ -12,6 +14,14 @@ class TripsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @bookings = @trip.bookings.count
+    @remaining_places = @trip.capacity - @bookings
+    if current_user
+    current_user.bookings.each do |booking|
+        @user_booking = booking if booking.trip_id == @trip.id
+    end
+  end
+
   end
 
   def new

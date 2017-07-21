@@ -4,7 +4,7 @@
     <h1>Welcome to AirSails</h1>
     <p>Unique sailing trip</p>
     <%= form_tag trips_path, method: :get do %>
-    <%= text_field_tag :departure_port, nil, placeholder: "City departure", class: "btn-lg" %>
+    <%= text_field_tag :departure_port, nil, placeholder: "Choose a port", class: "btn-lg" %>
     <%= text_field_tag :departure_date, nil, placeholder: "Date", class: "datepicker btn-lg" %>
     <%= submit_tag "Search", class:"btn btn-primary btn-lg" %>
     <% end %>
@@ -17,16 +17,16 @@
 </div>
 
 <div class="container">
-  <h1 class="text-center">Largue the moorings</h1>
+  <h1 class="text-center">Drop the moorings</h1>
   <div class="col-xs-12 col-sm-6 col-md-4">
     <p align="center"><%= image_tag "globe.png", alt: "Globe" %></p>
     <h2 class="text-center">Discovery</h2>
-    <p class="text-center">Discover the world to the force of the wind.</p>
+    <p class="text-center">Discover the world only by the force of the wind.</p>
   </div>
   <div class="col-xs-12 col-sm-6 col-md-4">
     <p align="center"><%= image_tag "beer.png", alt: "Beer" %></p>
-    <h2 class="text-center">Meet</h2>
-    <p class="text-center">Meeting the world in the wind.</p>
+    <h2 class="text-center">Lifestyle</h2>
+    <p class="text-center">Meet the ocean's way of life.</p>
   </div>
   <div class="col-xs-12 col-sm-6 col-md-4">
     <p align="center"><%= image_tag "dollar.png", alt: "Dollar" %></p>
@@ -42,7 +42,7 @@
     <% @cards.each do |trip| %>
     <div class="col-xs-12 col-sm-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0, 0.2)), url('<%= trip.photo.url(:standard) %>');">
-        <div class="card-category"> <%= trip.departure_port %> <%= trip.arrival_port %> </div>
+        <div class="card-category"> <%= trip.departure_port %> <i class="fa fa-arrows-h" aria-hidden="true"></i> <%= trip.arrival_port %> </div>
         <div class="card-description">
           <h2><%= trip.boat_name %></h2>
           <p><%= trip.description %></p>
