@@ -51,7 +51,9 @@
               <% if @user_booking == nil %>
                 <% else %>
                   <% if @user_booking.status == "Accepted" %>
-                    <li>Contact:  <strong><%= @trip.captain.email %> </strong></li>
+                    <li><%= "Contact:" %></li>
+                    <li> <i class="fa fa-envelope"> <%= @trip.captain.email %></i> </li>
+                    <li> <i class="fa fa-phone"> <%= @trip.captain.phone_number %></i></li>
                   <% end %>
                 <% end %>
             </ul>
@@ -68,7 +70,7 @@
               <li><i class="fa fa-users"></i><strong><%=@trip.capacity%> peoples</strong></li>
             </ul>
            </div>
-         </div> 
+         </div>
         </div>
       </div>
     </div>
