@@ -12,7 +12,7 @@
 .header-trip {
   padding: 15px;
   background-color: white;
-  width: 95%;
+  width: 85%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -20,7 +20,8 @@
   border-top-left-radius: 10px;
 }
 .book-trip {
-  background-color: grey;
+  background-color: $gray;
+  color: grey;
 }
 
 .fa-arrow-right:before {
@@ -51,9 +52,7 @@
 
 .trip-description {
     background: $gray;
-    padding: 50px 0;
-    padding-bottom: 50px;
-    padding-bottom: 100px;
+    padding: 50px 95px 100px 95px;
     font-size: 14px;
     color: #555555;
     display: flex;
@@ -91,4 +90,7 @@
   margin-right: 0;
   padding: 15px;
   border-radius: 10px;
+}
+.list-unstyled {
+  font-size: 15px;
 }

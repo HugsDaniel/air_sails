@@ -6,7 +6,7 @@
     <%= form_tag trips_path, method: :get do %>
 
     <%= text_field_tag :departure_port, nil, placeholder: "Choose a port", class: "btn-lg" %>
-    <%= text_field_tag :departure_date, nil, placeholder: "Date", class: "datepicker btn-lg" %>
+    <%= text_field_tag :departure_date, nil, placeholder: "Date", class: "datepicker btn-lg", "data-date-start-date": "+1d" %>
     <%= submit_tag "Search", class:"btn btn-primary btn-lg" %>
     <% end %>
     <div class="container">
