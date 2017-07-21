@@ -377,3 +377,18 @@ trip_didier.bookings.create!(
   price: trip_didier.price
 }
 )
+
+trip_eric.bookings.create!(
+{
+  user: thomas,
+  price: trip_eric.price
+}
+)
+
+trip_eric.bookings.create!(
+{
+  user: vincent,
+  price: trip_eric.price
+}
+)
+
