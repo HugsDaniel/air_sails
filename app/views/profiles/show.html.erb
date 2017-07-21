@@ -18,6 +18,9 @@
 
   <div class="container">
     <h3 class="text-center">Reservation for my trips</h3>
+        <% if @captain_bookings == [] %>
+        <p class="text-center padded"> No reservations yet ! </p>
+        <% else %>
         <% @captain_bookings.each do |booking| %>
         <div class="product">
         <ul class="list-inline product-controls col-lg-offset-2">
@@ -30,6 +33,7 @@
         </ul>
         </div>
         <% end %>
+        <% end %>
   </div>
 
 
@@ -37,6 +41,9 @@
 
 <div class="container">
   <h3 class="text-center">My trips reserved</h3>
+      <% if @bookings == [] %>
+      <p class="text-center padded"> No trips reserved yet ! </p>
+      <% else %>
       <% @bookings.each do |booking| %>
       <div class="product">
       <ul class="list-inline product-controls col-lg-offset-2">
@@ -46,5 +53,6 @@
       <li>Status : <%= booking.status %></li>
       </ul>
       </div>
+  <% end %>
   <% end %>
 </div>
