@@ -22,9 +22,9 @@
         <div class="product">
         <ul class="list-inline product-controls col-lg-offset-2">
         <li><%= image_tag "holidays.png" %></li>
-        <li><%= booking.first_name %><%= booking.last_name %>booked a place on my trip !</li>
-        <li>Motivation : <%= booking.motivation %></li>
-        <li>Status : <%= booking.status %></li>
+        <li><%= booking.user.first_name %> booked a place on your trip !</li>
+        <li><strong>Motivation</strong> : <%= booking.motivation %></li>
+        <li><strong>Status</strong> : <%= booking.status %></li>
         <li><%= link_to "Accept", accept_reservation_path(booking), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn btn-success"  %></li>
         <li><%= link_to "Deny", deny_reservation_path(booking), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn btn-danger"  %></li>
         </ul>
@@ -41,8 +41,7 @@
       <div class="product">
       <ul class="list-inline product-controls col-lg-offset-2">
       <li><%= image_tag "transport.png" %></li>
-      <li><%= booking.trip.departure_port %></strong></li>
-      <li class="fa fa-arrows-h" aria-hidden="true"></i><strong> <%= booking.trip.arrival_port %></strong></li>
+      <li><strong><%= booking.trip.departure_port %></strong><i class="fa fa-arrows-h" aria-hidden="true"></i><strong> <%= booking.trip.arrival_port %></strong></li>
       <li><%= link_to "View trip details !", trip_path(booking.trip), class: "text-center btn btn-success", target: "_blank" %></li>
       <li>Status : <%= booking.status %></li>
       </ul>

@@ -17,10 +17,10 @@ class TripsController < ApplicationController
     @bookings = @trip.bookings.count
     @remaining_places = @trip.capacity - @bookings
     if current_user
-    current_user.bookings.each do |booking|
-      @user_booking = booking if booking.trip_id == @trip.id
+      current_user.bookings.each do |booking|
+        @user_booking = booking if booking.trip_id == @trip.id
+      end
     end
-  end
 
   end
 

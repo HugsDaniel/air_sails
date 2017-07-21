@@ -1,11 +1,11 @@
 <% if @remaining_places == 0 %>
-  <%= render 'shared/modal_impossible' %>
+<%= render 'shared/modal_impossible' %>
 <% else %>
-  <% if current_user %>
-    <%= render 'shared/modal_booking' %>
-  <% else %>
-    <%= render 'shared/modal_login' %>
-  <% end %>
+<% if current_user %>
+<%= render 'shared/modal_booking' %>
+<% else %>
+<%= render 'shared/modal_login' %>
+<% end %>
 <% end %>
 
 
@@ -40,38 +40,38 @@
         <div class="row" id="trip-data">
           <div class="col-xs-12 col-sm-2">
             <strong><h5><u><FONT size="4pt">About the trip:</font></h5></u></strong>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <ul class="list-unstyled">
-              <li>Departure port:  <strong><%= @trip.departure_port %></strong></li>
-              <li>Arrival port:  <strong><%= @trip.arrival_port %></strong></li>
-              <li>Departure date:  <strong><%= @trip.departure_date %></strong></li>
-              <li>Distance (in nautical miles):  <strong><%= @trip.distance %> nm</strong></li>
-              <li>Estimated duration:  <strong><%= @trip.duration %> days</strong></li>
-              <% if @user_booking == nil %>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <ul class="list-unstyled">
+                <li>Departure port:  <strong><%= @trip.departure_port %></strong></li>
+                <li>Arrival port:  <strong><%= @trip.arrival_port %></strong></li>
+                <li>Departure date:  <strong><%= @trip.departure_date %></strong></li>
+                <li>Distance (in nautical miles):  <strong><%= @trip.distance %> nm</strong></li>
+                <li>Estimated duration:  <strong><%= @trip.duration %> days</strong></li>
+                <% if @user_booking == nil %>
                 <% else %>
                   <% if @user_booking.status == "Accepted" %>
-                    <li><%= "Contact:" %></li>
-                    <li> <i class="fa fa-envelope"> <%= @trip.captain.email %></i> </li>
-                    <li> <i class="fa fa-phone"> <%= @trip.captain.phone_number %></i></li>
-                  <% end %>
+                  <li><%= "Contact:" %></li>
+                  <li><i class="fa fa-envelope"></i><%= @trip.captain.email %></li>
+                  <li><i class="fa fa-phone"></i><%= @trip.captain.phone_number %></li>
                 <% end %>
-            </ul>
-          </div>
+                <% end %>
+              </ul>
+            </div>
 
-          <div class="col-xs-12 col-sm-2">
-            <strong><u><h5><FONT size="4pt">About the boat:</font></h5></strong></u>
+            <div class="col-xs-12 col-sm-2">
+              <strong><u><h5><FONT size="4pt">About the boat:</font></h5></strong></u>
+              </div>
+              <div class="col-xs-12 col-sm-4">
+                <ul class="list-unstyled">
+                  <li><i class="fa fa-user-circle-o"></i><strong><%=@trip.captain.first_name%> <%=@trip.captain.last_name%></strong></li>
+                  <li><i class="fa fa-ship"></i><strong><%=@trip.boat_name%></strong></li>
+                  <li><i class="fa fa-info-circle"></i><strong><%=@trip.description%></strong></li>
+                  <li><i class="fa fa-users"></i><strong><%=@trip.capacity%> peoples</strong></li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="col-xs-12 col-sm-4">
-            <ul class="list-unstyled">
-              <li><i class="fa fa-user-circle-o"></i><strong><%=@trip.captain.first_name%> <%=@trip.captain.last_name%></strong></li>
-              <li><i class="fa fa-ship"></i><strong><%=@trip.boat_name%></strong></li>
-              <li><i class="fa fa-info-circle"></i><strong><%=@trip.description%></strong></li>
-              <li><i class="fa fa-users"></i><strong><%=@trip.capacity%> peoples</strong></li>
-            </ul>
-           </div>
-         </div>
         </div>
       </div>
     </div>
-</div>

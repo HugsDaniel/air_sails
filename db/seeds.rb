@@ -304,91 +304,103 @@ trip_didier_8 = Trip.create!(
 trip_vincent.bookings.create!(
 {
   user: jeanmich,
-  price: trip_vincent.price
+  price: trip_vincent.price,
+  motivation: "J'adore la mer, je suis un très bon marin !"
 }
 )
 
 trip_vincent.bookings.create!(
 {
   user: eric,
-  price: trip_vincent.price
+  price: trip_vincent.price,
+  motivation: "J'adore la mer, je suis un très bon marin !"
 }
 )
 
 trip_hugo_sudaf.bookings.create!(
 {
   user: didier,
-  price: trip_hugo_sudaf.price
+  price: trip_hugo_sudaf.price,
+  motivation: "J'adore la mer, je suis un très bon marin !"
 }
 )
 
 trip_hugo_sudaf.bookings.create!(
 {
   user: thomas,
-  price: trip_hugo_sudaf.price
+  price: trip_hugo_sudaf.price,
+  motivation: "J'adore la mer, je suis un très bon marin !"
 }
 )
 
 trip_hugo_bresil.bookings.create!(
 {
   user: eric,
-  price: trip_hugo_bresil.price
+  price: trip_hugo_bresil.price,
+  motivation: "J'adore la mer, je suis un très bon marin !"
 }
 )
 
 trip_hugo_bresil.bookings.create!(
 {
   user: vincent,
-  price: trip_hugo_bresil.price
+  price: trip_hugo_bresil.price,
+  motivation: "J'adore la mer, je suis un très bon marin !"
 }
 )
 
 trip_gob.bookings.create!(
 {
   user: vincent,
-  price: trip_gob.price
+  price: trip_gob.price,
+  motivation: "J'adore la mer, je suis un très bon marin !"
 }
 )
 
 trip_didier.bookings.create!(
 {
   user: vincent,
-  price: trip_didier.price
+  price: trip_didier.price,
+  motivation: "J'adore la mer, je suis un très bon marin !"
 }
 )
 
 trip_didier.bookings.create!(
 {
   user: hugo,
-  price: trip_didier.price
+  price: trip_didier.price,
+  motivation: "J'adore la mer, je suis un très bon marin !"
 }
 )
 
 trip_didier.bookings.create!(
 {
   user: thomas,
-  price: trip_didier.price
+  price: trip_didier.price,
+  motivation: "J'adore la mer, je suis un très bon marin !"
 }
 )
 
 trip_didier.bookings.create!(
 {
   user: eric,
-  price: trip_didier.price
+  price: trip_didier.price,
+  motivation: "J'adore la mer, je suis un très bon marin !"
 }
 )
 
 trip_eric.bookings.create!(
 {
   user: thomas,
-  price: trip_eric.price
+  price: trip_eric.price,
+  motivation: "J'adore la mer, je suis un très bon marin !"
 }
 )
 
 trip_eric.bookings.create!(
 {
   user: vincent,
-  price: trip_eric.price
+  price: trip_eric.price,
+  motivation: "J'adore la mer, je suis un très bon marin !"
 }
 )
-
