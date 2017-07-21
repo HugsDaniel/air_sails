@@ -15,6 +15,7 @@
   </div>
 </div>
 
+
   <div class="container">
     <h3 class="text-center">Reservation for my trips</h3>
         <% @captain_bookings.each do |booking| %>
@@ -48,29 +49,3 @@
       </div>
   <% end %>
 </div>
-
-
-
-
-
-<!-- <div class="container">
-  <div class="product">
-    <div class='product-upvote'>
-      <div class="product-arrow"></div>
-    </div>
-    <div class='product-body'>
-      <h3 class="text-center">Reservation for my trips</h3>
-    </div>
-    <div class="row">
-      <% @captain_bookings.each do |booking| %>
-        <div class="card-profile">
-          <div class="text-center"><%= image_tag "holidays.png" %></div>
-          <div class="text-center"><%= booking.first_name %><%= booking.last_name %>booked a place on my trip !</div>
-          <div class="text-center">Motivation : <%= booking.motivation %></div>
-          <div class="text-center">Status : <%= booking.status %></div>
-          <div class="text-center"><%= link_to "Accept", accept_reservation_path(booking), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn btn-success"  %></div>
-          <div class="text-center"><%= link_to "Deny", deny_reservation_path(booking), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn btn-danger"  %></div>
-        </div>
-      <% end %>
-    </div>
-  </div> -->

@@ -23,8 +23,8 @@ jeanmich = User.create!(
 
 didier = User.create!(
 {
-  first_name: 'Roland',
-  last_name: 'Jourdain',
+  first_name: 'Gislain',
+  last_name: 'Bardou',
   email: 'didier.patoche@gmail.com',
   phone_number: '0296758452',
   password: 'didier',
@@ -117,7 +117,7 @@ trip_eric = Trip.create!(
   departure_date: Date.today + 1.day,
   duration: 2,
   distance: 80,
-  boat_name: 'Pen Duick',
+  boat_name: 'Pen Duick VI',
   description: 'Convoyage vers La Trinité en compagnie d\'Eric Tabarly',
   capacity: 3,
   price: 50,
@@ -173,6 +173,133 @@ trip_didier = Trip.create!(
 }
 )
 
+trip_didier_1 = Trip.create!(
+{
+  captain: didier,
+  departure_port: 'Piriac-sur-Mer',
+  arrival_port: 'Concarneau',
+  departure_date: Date.today + 2.day,
+  duration: 1,
+  distance: 200,
+  boat_name: 'Why',
+  description: 'Under The Pole Expedition',
+  capacity: 8,
+  price: 100,
+  remote_photo_url: 'https://www.azzaro.com/assets/img/underthepole/bg-good-1.jpg'
+}
+)
+
+trip_didier_2 = Trip.create!(
+{
+  captain: didier,
+  departure_port: 'Concarneau',
+  arrival_port: 'Lorient',
+  departure_date: Date.today + 5.day,
+  duration: 1,
+  distance: 100,
+  boat_name: 'Why',
+  description: 'Under The Pole Expedition',
+  capacity: 8,
+  price: 100,
+  remote_photo_url: 'https://www.azzaro.com/assets/img/underthepole/bg-good-1.jpg'
+}
+)
+
+trip_didier_3 = Trip.create!(
+{
+  captain: vincent,
+  departure_port: 'Piriac-sur-Mer',
+  arrival_port: 'La Rochelle',
+  departure_date: Date.today + 5.day,
+  duration: 2,
+  distance: 300,
+  boat_name: 'Ker Pen',
+  description: 'Petite balade au soleil, eau interdite à bord',
+  capacity: 5,
+  price: 30,
+  remote_photo_url: 'http://www.voilesetvoiliers.com/ressources/images/643_944/25f54fb7f58d97d2e8ce39731d8e4f86.jpg'
+}
+)
+
+trip_didier_4 = Trip.create!(
+{
+  captain: eric,
+  departure_port: 'Lorient',
+  arrival_port: 'Antarctique',
+  departure_date: Date.today + 1.week,
+  duration: 90,
+  distance: 15000,
+  boat_name: 'Pen Duick VI',
+  description: 'Exploration polaire en compagnie d\'Eric Tabarly. Marins très expérimentés uniquement.',
+  capacity: 8,
+  price: 3000,
+  remote_photo_url: 'https://www.lamaisondephoto.com/boutique/client/gfx/photos/produit/Penduick_86.jpg'
+}
+)
+
+trip_didier_5 = Trip.create!(
+{
+  captain: jeanmich,
+  departure_port: 'Port-la-Forêt',
+  arrival_port: 'Île de Ré',
+  departure_date: Date.today + 2.week,
+  duration: 1,
+  distance: 400,
+  boat_name: 'Z',
+  description: 'Convoyage de Z pour un évènement. Marins expérimentés demandés.',
+  capacity: 8,
+  price: 100,
+  remote_photo_url: 'http://www.catamarans-fountaine-pajot.com/wp-content/uploads/2015/11/gmr-victoria67-1962-1-950x570.jpg'
+}
+)
+
+trip_didier_6 = Trip.create!(
+{
+  captain: didier,
+  departure_port: 'Umanacq',
+  arrival_port: 'Alaska',
+  departure_date: Date.today + 3.week,
+  duration: 40,
+  distance: 9000,
+  boat_name: 'Why',
+  description: 'Alaska par le passage du Nord Ouest, marins expérimentés uniquement.',
+  capacity: 8,
+  price: 3000,
+  remote_photo_url: 'https://www.azzaro.com/assets/img/underthepole/bg-good-1.jpg'
+}
+)
+
+trip_didier_7 = Trip.create!(
+{
+  captain: jeanmich,
+  departure_port: 'Île de Ré',
+  arrival_port: 'Port-la-Forêt',
+  departure_date: Date.today + 3.week,
+  duration: 1,
+  distance: 400,
+  boat_name: 'Z',
+  description: 'Retour du Z. Marins expérimentés demandés.',
+  capacity: 8,
+  price: 100,
+  remote_photo_url: 'http://www.catamarans-fountaine-pajot.com/wp-content/uploads/2015/11/gmr-victoria67-1962-1-950x570.jpg'
+}
+)
+
+trip_didier_8 = Trip.create!(
+{
+  captain: hugo,
+  departure_port: 'Rio de Janeiro',
+  arrival_port: 'Cape Town',
+  departure_date: Date.today + 4.week,
+  duration: 27,
+  distance: 6000,
+  boat_name: 'Nomade des Mers',
+  description: 'Rio Cape Town par l\'Atlantique Sud, ça va secouer !',
+  capacity: 3,
+  price: 100,
+  remote_photo_url: 'https://www.wedemain.fr/photo/art/grande/8962502-14218333.jpg?v=1455678408'
+}
+)
 
 trip_vincent.bookings.create!(
 {
@@ -265,9 +392,3 @@ trip_eric.bookings.create!(
 }
 )
 
-# trip_eric.bookings.create!(
-# {
-#   user: hugo,
-#   price: trip_eric.price
-# }
-# )
