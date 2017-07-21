@@ -1,36 +1,56 @@
-<div class="contenaire">
+
+<div class="col-md-12">
+  <h1 class="text-center">Welcome</h1>
+  <h3 class="text-center"><%= current_user.first_name %></h3>
+</div>
+<div class="avatar-profile">
+  <img src="<%= current_user.profile_pic %>" alt="user" class="avatar-profile-large">
+</div>
+<div class="col-lg-12">
+  <div class="info">
+    <h3 class="text-center">Info</h3>
+    <% @trips.each do |trip| %>
+    <p class="text-center">Last Name :
+      <%= current_user.last_name %></p>
+    <p class="text-center">First Name :
+      <%= current_user.first_name %></p>
+    <p class="text-center">@ :
+      <%= current_user.email %></p>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="container">
+  <h3 class="text-center">Reservation for my trips</h3>
   <div class="row">
-    <div class="col-md-12">
-      <h1 class="text-center">Welcome</h1>
-      <h3 class="text-center"><%= current_user.first_name %></h3>
+    <% @bookings.each do |booking| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card-profile">
+        <div class="text-center"><%= image_tag "holidays.png" %></div>
+        <div class="text-center">Departure port : <%= booking.trip.departure_port %></div>
+        <div class="text-center">Arrival port : <%= booking.trip.arrival_port %></div>
+        <div class="text-center">Status : <%= booking.status %></div>
+        <div class="text-center"><%= link_to "Accept", accept_reservation_path(booking), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn btn-success"  %></div>
+        <div class="text-center"><%= link_to "Deny", deny_reservation_path(booking), method: :patch, data: {confirm: "Are you sure?"}, class: "btn btn btn-danger"  %></div>
+      </div>
     </div>
-    <div class="avatar-profile">
-    <img src="<%= current_user.profile_pic %>" alt="user" class="avatar-profile-large">
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <h3 class="text-center">My trips reserved</h3>
+  <div class="row">
+    <% @bookings.each do |booking| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card-profile">
+        <div class="text-center"><%= image_tag "transport.png" %></div>
+        <div class="text-center">Departure date : <strong><%= booking.trip.departure_date %></strong></div>
+        <div class="text-center">Departure port : <%= booking.trip.departure_port %></div>
+        <div class="text-center">Arrival port : <%= booking.trip.arrival_port %></div>
+      </div>
     </div>
-    <div class="col-md-4">
-      <h3 class="text-center">Info</h3>
-      <% @trips.each do |trip| %>
-      <p class="text-center">Last Name : <%= current_user.last_name %></p>
-      <p class="text-center">First Name : <%= current_user.first_name %></p>
-      <% end %>
-    </div>
-    <div class="col-md-4">
-      <h3 class="text-center">Trips</h3>
-      <% @bookings.each do |booking| %>
-      <p class="text-center">Departure date : <strong><%= booking.trip.departure_date %></strong></p>
-      <p class="text-center">Departure port : <%= booking.trip.departure_port %></p>
-      <p class="text-center">Arrival port : <%= booking.trip.arrival_port %></p>
-      <% end %>
-    </div>
-<div class="col-md-4">
-      <h3 class="text-center">Réservation</h3>
-      <% @bookings.each do |booking| %>
-      <p class="text-center">Departure port : <%= booking.trip.departure_port %></p>
-      <p class="text-center">Arrival port : <%= booking.trip.arrival_port %></p>
-      <p class="text-center">Status : <%= booking.status %></p>
-      <%= link_to "Accept", accept_reservation_path(booking), method: :patch, data: {confirm: "Are you sure?"}, class: "text-center btn btn-success"  %>
-      <%= link_to "Deny", deny_reservation_path(booking), method: :patch, data: {confirm: "Are you sure?"}, class: "text-center btn btn-danger"  %>
-      <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
