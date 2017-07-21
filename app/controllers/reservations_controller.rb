@@ -1,7 +1,7 @@
 class ReservationsController < ApplicationController
   before_action :set_booking
   before_action :authenticate_user!
-  
+
   def accept
     @booking.update(:status => "Accepted")
     if @booking.save

@@ -174,79 +174,79 @@ trip_didier = Trip.create!(
 )
 
 
-trip_vincent.bookings.create!(
-{
-  user: jeanmich,
-  price: trip_vincent.price
-}
-)
-
-trip_vincent.bookings.create!(
-{
-  user: eric,
-  price: trip_vincent.price
-}
-)
-
-trip_hugo_sudaf.bookings.create!(
-{
-  user: didier,
-  price: trip_hugo_sudaf.price
-}
-)
-
-trip_hugo_sudaf.bookings.create!(
-{
-  user: thomas,
-  price: trip_hugo_sudaf.price
-}
-)
-
-trip_hugo_bresil.bookings.create!(
-{
-  user: eric,
-  price: trip_hugo_bresil.price
-}
-)
-
-trip_hugo_bresil.bookings.create!(
-{
-  user: vincent,
-  price: trip_hugo_bresil.price
-}
-)
-
-trip_gob.bookings.create!(
-{
-  user: vincent,
-  price: trip_gob.price
-}
-)
-
-trip_didier.bookings.create!(
-{
-  user: vincent,
-  price: trip_didier.price
-}
-)
-
-trip_didier.bookings.create!(
-{
-  user: hugo,
-  price: trip_didier.price
-}
-)
-
-trip_didier.bookings.create!(
-{
-  user: thomas,
-  price: trip_didier.price
-}
-)
-
-trip_didier.bookings.create!(
-{
-  user: eric,
-  price: trip_didier.price
-}
-)
+# trip_vincent.bookings.create!(
+# {
+#   user: jeanmich,
+#   price: trip_vincent.price
+# }
+# )
+#
+# trip_vincent.bookings.create!(
+# {
+#   user: eric,
+#   price: trip_vincent.price
+# }
+# )
+#
+# trip_hugo_sudaf.bookings.create!(
+# {
+#   user: didier,
+#   price: trip_hugo_sudaf.price
+# }
+# )
+#
+# trip_hugo_sudaf.bookings.create!(
+# {
+#   user: thomas,
+#   price: trip_hugo_sudaf.price
+# }
+# )
+#
+# trip_hugo_bresil.bookings.create!(
+# {
+#   user: eric,
+#   price: trip_hugo_bresil.price
+# }
+# )
+#
+# trip_hugo_bresil.bookings.create!(
+# {
+#   user: vincent,
+#   price: trip_hugo_bresil.price
+# }
+# )
+#
+# trip_gob.bookings.create!(
+# {
+#   user: vincent,
+#   price: trip_gob.price
+# }
+# )
+#
+# trip_didier.bookings.create!(
+# {
+#   user: vincent,
+#   price: trip_didier.price
+# }
+# )
+#
+# trip_didier.bookings.create!(
+# {
+#   user: hugo,
+#   price: trip_didier.price
+# }
+# )
+#
+# trip_didier.bookings.create!(
+# {
+#   user: thomas,
+#   price: trip_didier.price
+# }
+# )
+#
+# trip_didier.bookings.create!(
+# {
+#   user: eric,
+#   price: trip_didier.price
+# }
+# )

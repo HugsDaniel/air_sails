@@ -1,22 +1,27 @@
-<% if current_user %>
-  <%= render 'shared/modal_booking' %>
+<% if @remaining_places == 0 %>
+  <%= render 'shared/modal_impossible' %>
 <% else %>
-  <%= render 'shared/modal_login' %>
+  <% if current_user %>
+    <%= render 'shared/modal_booking' %>
+  <% else %>
+    <%= render 'shared/modal_login' %>
+  <% end %>
 <% end %>
 
 
 <div class="boat-pic" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url(<%= @trip.photo.url(:standard) %>)">
   <div class="header-trip">
     <div class="header-trip-captain text-center padded">
-        <%= image_tag @trip.captain.profile_pic, class: "avatar-mega-large avatar-circle" %>
-        <p><%= @trip.captain.first_name %></p>
+      <%= image_tag @trip.captain.profile_pic, class: "avatar-mega-large avatar-circle" %>
+      <p><%= @trip.captain.first_name %></p>
     </div>
     <div>
       <h1>
         <%= @trip.departure_port %><i class="fa fa-arrow-right"></i><%= @trip.arrival_port %>
       </h1>
-       <p><%= @trip.description %></p>
-       <p>Price: <strong><%=@trip.price%> <i class="fa fa-eur"></i></strong></p>
+      <p><%= @trip.description %></p>
+      <p>Price: <strong><%=@trip.price%> <i class="fa fa-eur"></i></strong></p>
+      <p>Remaining places: <%= @remaining_places %> </p>
     </div>
     <button type="button" class="navbar-wagon-item navbar-wagon-button btn book-trip" data-toggle="modal" data-target="#myModal">
       Book this trip
@@ -24,8 +29,8 @@
     <!-- <form action="/trips/<%=@trip.id%>/bookings" method="post" data= { confirm: 'Are you sure?' } >
     <h4><i class="fa fa-star" style="color: #ffb400"></i> Book from <%=@trip.price%> €</h4>
     <input type="submit" class="btn btn-danger" value="Book this trip" style="width: 100%">
-    </form> -->
-  </div>
+  </form> -->
+</div>
 </div>
 
 <div class="trip-description">
@@ -43,7 +48,12 @@
               <li>Departure date:  <strong><%= @trip.departure_date %></strong></li>
               <li>Distance (in nautical miles):  <strong><%= @trip.distance %> nm</strong></li>
               <li>Estimated duration:  <strong><%= @trip.duration %> days</strong></li>
-              <li>Contact:  <strong><%= @trip.captain.email %> </strong></li>
+              <% if @user_booking == nil %>
+                <% else %>
+                  <% if @user_booking.status == "Accepted" %>
+                    <li>Contact:  <strong><%= @trip.captain.email %> </strong></li>
+                  <% end %>
+                <% end %>
             </ul>
           </div>
 
@@ -57,9 +67,9 @@
               <li><i class="fa fa-info-circle"></i><strong><%=@trip.description%></strong></li>
               <li><i class="fa fa-users"></i><strong><%=@trip.capacity%> peoples</strong></li>
             </ul>
-          </div>
+           </div>
+         </div> 
         </div>
       </div>
     </div>
-  </div>
 </div>
